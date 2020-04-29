@@ -1,14 +1,22 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+<<<<<<< Updated upstream
 [ext_resource path="res://Assets/background-1.png" type="Texture" id=2]
+=======
+[ext_resource path="res://Assets/00.png" type="Texture" id=2]
+>>>>>>> Stashed changes
 [ext_resource path="res://Scripts/Enemies.gd" type="Script" id=3]
 [ext_resource path="res://Assets/HandSpray.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Bullets.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Meteors.gd" type="Script" id=6]
 [ext_resource path="res://Assets/OstrichSans-Heavy copy.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=8]
+<<<<<<< Updated upstream
 [ext_resource path="res://Assets/00.png" type="Texture" id=9]
+=======
+[ext_resource path="res://Assets/background-1.png" type="Texture" id=9]
+>>>>>>> Stashed changes
 [ext_resource path="res://Assets/210737__edtijo__night-soft-techno.wav" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
@@ -29,6 +37,7 @@ font_data = ExtResource( 7 )
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Background"]
+<<<<<<< Updated upstream
 position = Vector2( -19.5723, -25.8781 )
 scale = Vector2( 1.28204, 1.19991 )
 texture = ExtResource( 2 )
@@ -38,6 +47,18 @@ centered = false
 margin_top = 2.0
 margin_right = 1022.0
 margin_bottom = 688.0
+=======
+position = Vector2( -5.45943, -8.5399 )
+scale = Vector2( 1.22548, 1.23896 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+margin_left = 0.56134
+margin_top = 14.8773
+margin_right = 1022.56
+margin_bottom = 686.877
+>>>>>>> Stashed changes
 color = Color( 0, 0, 0, 0.509804 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -123,6 +144,7 @@ autoplay = true
 [node name="Barricade" type="StaticBody2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Barricade"]
+<<<<<<< Updated upstream
 position = Vector2( 308.106, 423.066 )
 scale = Vector2( 2.12029, 0.857228 )
 texture = ExtResource( 9 )
@@ -130,11 +152,21 @@ texture = ExtResource( 9 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barricade"]
 position = Vector2( 308.106, 423.066 )
 scale = Vector2( 2.12029, 0.857228 )
+=======
+position = Vector2( 286.856, 433.653 )
+scale = Vector2( 2.57182, 0.747387 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barricade"]
+position = Vector2( 286.856, 433.653 )
+scale = Vector2( 2.57182, 0.747387 )
+>>>>>>> Stashed changes
 polygon = PoolVector2Array( 30, -30, 30, 30, -29.5, 30, -30, 29.4, -30, -30, 29.1, -30 )
 
 [node name="Barricade2" type="StaticBody2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Barricade2"]
+<<<<<<< Updated upstream
 position = Vector2( 740.916, 425.873 )
 scale = Vector2( 2.12029, 0.857228 )
 texture = ExtResource( 9 )
@@ -142,6 +174,15 @@ texture = ExtResource( 9 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barricade2"]
 position = Vector2( 740.916, 425.873 )
 scale = Vector2( 2.12029, 0.857228 )
+=======
+position = Vector2( 680.933, 436.459 )
+scale = Vector2( 2.57182, 0.747387 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barricade2"]
+position = Vector2( 681.494, 436.459 )
+scale = Vector2( 2.57182, 0.747387 )
+>>>>>>> Stashed changes
 polygon = PoolVector2Array( 30, -30, 30, 30, -29.5, 30, -30, 29.4, -30, -30, 29.1, -30 )
 [connection signal="timeout" from="Bullets/Timer" to="Bullets" method="_on_Timer_timeout"]
 [connection signal="health_changed" from="Player" to="HUD" method="_on_Player_health_changed"]
