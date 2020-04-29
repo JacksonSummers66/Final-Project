@@ -23,10 +23,12 @@ Future plans:
 
 ###Team Members
 
-  * Member 1
+  * Grant Jackson
     * Contributions
-  * Member 2
+  * Ricardo Aguilar
     * Contributions
-  * Member 3
+  * Jose Liahut
     * Contributions
+  * Jackson Summers
+    
 
