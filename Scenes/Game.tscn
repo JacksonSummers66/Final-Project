@@ -1,23 +1,24 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/stars.jpeg" type="Texture" id=2]
+[ext_resource path="res://Assets/background-1.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Enemies.gd" type="Script" id=3]
 [ext_resource path="res://Assets/HandSpray.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Bullets.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Meteors.gd" type="Script" id=6]
 [ext_resource path="res://Assets/OstrichSans-Heavy copy.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=8]
+[ext_resource path="res://Assets/00.png" type="Texture" id=9]
 [ext_resource path="res://Assets/210737__edtijo__night-soft-techno.wav" type="AudioStream" id=10]
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=1]
 size = 30
 outline_size = 1
 outline_color = Color( 0.592157, 0.145098, 0.643137, 1 )
 use_mipmaps = true
 font_data = ExtResource( 7 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=2]
 size = 30
 outline_size = 1
 outline_color = Color( 0.0941176, 0.0901961, 0.909804, 1 )
@@ -28,13 +29,13 @@ font_data = ExtResource( 7 )
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Background"]
-position = Vector2( -58.2275, -22.0126 )
-scale = Vector2( 1.11254, 0.979871 )
+position = Vector2( -19.5723, -25.8781 )
+scale = Vector2( 1.28204, 1.19991 )
 texture = ExtResource( 2 )
 centered = false
 
 [node name="ColorRect" type="ColorRect" parent="Background"]
-margin_top = 16.0
+margin_top = 2.0
 margin_right = 1022.0
 margin_bottom = 688.0
 color = Color( 0, 0, 0, 0.509804 )
@@ -94,7 +95,7 @@ margin_left = 24.0
 margin_top = 32.0
 margin_right = 105.0
 margin_bottom = 56.0
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 1 )
 text = "Health: "
 align = 1
 valign = 1
@@ -107,7 +108,7 @@ margin_left = 896.0
 margin_top = 32.0
 margin_right = 968.0
 margin_bottom = 56.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 2 )
 text = "Score:"
 align = 1
 valign = 1
@@ -118,6 +119,30 @@ __meta__ = {
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
 autoplay = true
+
+[node name="Barricade" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Barricade"]
+position = Vector2( 308.106, 423.066 )
+scale = Vector2( 2.12029, 0.857228 )
+texture = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barricade"]
+position = Vector2( 308.106, 423.066 )
+scale = Vector2( 2.12029, 0.857228 )
+polygon = PoolVector2Array( 30, -30, 30, 30, -29.5, 30, -30, 29.4, -30, -30, 29.1, -30 )
+
+[node name="Barricade2" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Barricade2"]
+position = Vector2( 740.916, 425.873 )
+scale = Vector2( 2.12029, 0.857228 )
+texture = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Barricade2"]
+position = Vector2( 740.916, 425.873 )
+scale = Vector2( 2.12029, 0.857228 )
+polygon = PoolVector2Array( 30, -30, 30, 30, -29.5, 30, -30, 29.4, -30, -30, 29.1, -30 )
 [connection signal="timeout" from="Bullets/Timer" to="Bullets" method="_on_Timer_timeout"]
 [connection signal="health_changed" from="Player" to="HUD" method="_on_Player_health_changed"]
 [connection signal="score_changed" from="Player" to="HUD" method="_on_Player_score_changed"]
